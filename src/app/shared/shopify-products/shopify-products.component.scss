@@ -1,0 +1,47 @@
+.shopify-container {
+    margin-top: 6rem;
+    .shopify-products{
+      width: 100%;
+      height: calc((var(--ecommerce-card-height) * 3.5));
+      margin-bottom: -150px;
+    }
+  }
+  
+
+
+  @media(min-width: 768px) {
+
+    .shopify-container {
+      margin-top: 6rem;
+      margin-bottom: 6rem;
+      .shopify-products{
+        width: 100%;
+        height: calc(var(--ecommerce-card-height) * 2);
+      }
+    }
+  }
+  @media(min-width: 815px) {
+
+    .shopify-container {
+      margin-top: 6rem;
+      .shopify-products{
+        width: 100%;
+        height: calc(var(--ecommerce-card-height) * 2);
+      }
+    }
+  }
+  @media(min-width: 1110px) {
+
+    .shopify-container {
+      margin-top: 6rem;
+      .shopify-products{
+        width: 100%;
+        height: calc(var(--ecommerce-card-height) + 150px);
+      }
+    }
+  }
+  
+  #products-section {
+    max-width: 1800px;
+    margin: 0 auto;
+  }

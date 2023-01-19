@@ -1,0 +1,24 @@
+.arrow-container{
+    opacity: 1;
+    width: 100%;
+    text-align: center;
+    transition: opacity .5s;
+    &.scrolled{
+        opacity: 0;
+    }
+    .animation-container{
+        animation-name: hoverUpDown;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count:infinite;
+        animation-direction: alternate;
+    }
+    .down-arrow{
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes hoverUpDown {
+    0% { transform: translateY(5px) }
+    100% { transform: translateY(-5px) }
+}

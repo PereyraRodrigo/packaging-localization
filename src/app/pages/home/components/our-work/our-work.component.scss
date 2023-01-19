@@ -1,0 +1,23 @@
+.our-work-title {
+    width: fit-content;
+    margin-inline: auto;
+    margin-block: 4rem;
+    text-align: center;
+    color: white;
+    font-size: 4rem;
+    max-width: 90vw;
+
+    span {
+      background: linear-gradient(
+        90deg,
+        rgba(127, 71, 255, 1) 0%,
+        rgba(127, 71, 255, 1) 49%,
+        rgba(255, 255, 255, 1) 49%
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      background-size: 0%;
+      background-repeat: no-repeat;
+    }
+  }

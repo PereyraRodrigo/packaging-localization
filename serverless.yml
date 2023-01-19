@@ -1,0 +1,40 @@
+#  Don't edit this file!
+
+service: waypoint-website
+
+plugins:
+  - serverless-apigw-binary
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  memorySize: 128
+  timeout: 30
+  stage: production
+  region: us-west-1
+
+package:
+  exclude:
+    - src/**
+    - node_modules/**
+    - e2e/**
+    - coverage/**
+    - "!node_modules/aws-serverless-express/**"
+    - "!node_modules/@vendia/serverless-express/**"
+    - "!node_modules/binary-case/**"
+    - "!node_modules/type-is/**"
+    - "!node_modules/media-typer/**"
+    - "!node_modules/mime-types/**"
+    - "!node_modules/mime-db/**"
+
+custom:
+  apigwBinary:
+    types:
+      - "*/*"
+
+functions:
+  api:
+    handler: lambda.ssrserverless
+    events:
+      - http: ANY {proxy+} #this line is working correctly, please DO NOT modify it.
+      - http: ANY /

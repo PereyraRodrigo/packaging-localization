@@ -1,0 +1,93 @@
+@import '~swiper/scss';
+@import '~swiper/scss/controller';
+
+.swiper-slide {
+  height: unset !important;
+}
+
+.triple-slider {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  perspective: 1200px;
+
+  .triple-slider-main {
+    position: relative;
+    z-index: 10;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+  }
+  .triple-slider-prev,
+  .triple-slider-next {
+    opacity: 0.25;
+    position: absolute;
+    top: 50%;
+    user-select: none;
+    cursor: pointer;
+  }
+  .triple-slider-prev {
+    right: 50%;
+    transform: translateY(-50%) scale(0.75) rotateY(10deg);
+  }
+  .triple-slider-next {
+    left: 50%;
+    transform: translateY(-50%) scale(0.75) rotateY(-10deg);
+  }
+}
+
+#app {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  // Custom sizes for demo
+  p.logo-image{
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    z-index: 3;
+    font-weight: 600;
+    text-shadow: 1px 0px 4px rgba(0,0,0,0.6);
+  }
+  .triple-slider {
+    padding: 32px 0;
+    width: 100%;
+    .swiper {
+      width: 90%;
+      max-width: 740px;
+      border-radius: 8px;
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        inset: 0;
+        background: rgb(0,0,0);
+        background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+        z-index: 2;
+      }
+    }
+    .bg-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .logo-image {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+    }
+    .logo-image-1 {
+      width: 360px;
+      margin-left: -166px;
+    }
+
+    .logo-image {
+      @media (max-width: 480px) {
+        width: 172px;
+        margin-left: -80px;
+        font-size: 1rem;
+      }
+    }
+}

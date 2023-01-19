@@ -1,0 +1,117 @@
+<nav class="top-nav" #navBar [ngClass]="isScrolled ? 'scrolled' : 'normal'">
+  <!-- navbar top-->
+  <div class="inner-content">
+
+    <a [href]="navService.getLogoLink" class="navbar-logo">
+      <img *ngIf="navService.getLogoType == 'logo'" [src]="navService.getLogo" alt="Waypoint">
+      <h1 *ngIf="navService.getLogoType == 'text'" class="animated animatedFadeInUp fadeInUp"
+        [innerHTML]="navService.getLogoContent"></h1>
+    </a>
+    <div class="contact-menu">
+      <p class="service-nav closeC">Package <span class="colorIn">Localization</span></p>
+    </div>
+    <!-- <div class="cta-nav">
+      <div class="contact-menu">
+        <span class="show-contact pointer" *ngIf="router.url != '/contact'" (click)="navService.openContact()"
+          aria-label="Open contact form">
+          <span class="closeC" *ngIf="!navService.isOpen">CONTACT</span>
+          <span class="closeX" *ngIf="navService.isOpen">✖</span>
+        </span>
+      </div>
+      <div class="burger-menu" [ngClass]="open ? 'open' : ''" (click)="open=!open; animate=!animate; showContact=false"
+        >
+        <span>
+          <!-- ≡ -->
+          <!-- <svg width="38" height="27" viewBox="0 0 38 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.373047" y="11.1096" width="37.4777" height="5.21596" fill="white" />
+            <rect x="0.373047" y="0.789459" width="37.4777" height="5.21596" fill="white" />
+            <rect x="0.373047" y="21.1552" width="37.4777" height="5.21596" fill="white" />
+          </svg>
+        </span>
+      </div>
+    </div> -->
+  </div>
+  <!-- navbar top-->
+
+
+
+</nav>
+<!-- navigation -->
+
+<!-- <div class="full-size-menu" [ngClass]="open ? 'open' : 'close'" (click)="closeThis($event)">
+  <span class="close-navigation" (click)="open=!open; animate=!animate" aria-label="Close menu">✖</span>
+  <ul class="navigation-items">
+    <li class="main-nav-item" (hover)="animateUnderline=!animateUnderline">
+      <span class="text-overlay" [ngClass]="animate ? 'animate' : ''"></span>
+      <a [ngClass]="animate ? 'animate' : ''" class="main-nav-link" [routerLink]="['./']"
+        [routerLinkActive]="'active animateActive'" (click)="open=!open; showContact = false"
+        [routerLinkActiveOptions]="{ exact: true }" rel="nofollow">
+        Home
+      </a>
+    </li>
+    <li class="main-nav-item" (mouseover)="showSubmenu = true">
+      <span class="text-overlay" [ngClass]="animate ? 'animate' : ''"></span>
+      <span [ngClass]="animate ? 'animate' : ''" class="main-nav-link" [routerLinkActive]="'active animateActive'" rel="nofollow">
+        Our work
+      </span>
+      <ul class="sub-nav" [ngClass]="screenSize.getScreenSize() || showSubmenu == true ? 'open' : ''">
+        <li class="pointer">
+          <span (click)="navigate('creative'); open=!open; showContact = false" rel="nofollow">
+            Creative
+          </span>
+        </li>
+        <li class="pointer">
+          <span (click)="navigate('collectibles'); open=!open; showContact = false" rel="nofollow">
+            Collectibles
+          </span>
+        </li>
+        <li class="pointer">
+          <span (click)="navigate('e-commerce'); open=!open; showContact = false" rel="nofollow">
+            E-Commerce
+          </span>
+        </li>
+        <li class="pointer">
+          <span (click)="navigate('experiential'); open=!open; showContact = false" rel="nofollow">
+            Experiential
+          </span>
+        </li>
+        <li class="pointer">
+          <span (click)="navigate('games'); open=!open; showContact = false" rel="nofollow">
+            Games
+          </span>
+        </li>
+        <li class="disabled">
+          <span rel="nofollow">
+            Blockchain
+          </span>
+        </li>
+      </ul>
+    </li>
+    <li class="main-nav-item" (hover)="animateUnderline=!animateUnderline">
+      <span class="text-overlay" [ngClass]="animate ? 'animate' : ''"></span>
+      <a [ngClass]="animate ? 'animate' : ''" class="main-nav-link" [routerLink]="['/about']"
+        [routerLinkActive]="'active animateActive'" (click)="open=!open; showContact = false">
+        About Us
+      </a>
+    </li>
+    <li class="main-nav-item" (hover)="animateUnderline=!animateUnderline">
+      <span class="text-overlay" [ngClass]="animate ? 'animate' : ''"></span>
+      <a [ngClass]="animate ? 'animate' : ''" class="main-nav-link" [routerLink]="['/careers']"
+        [routerLinkActive]="'active animateActive'" (click)="open=!open; showContact = false">
+        Careers
+      </a>
+    </li>
+    <li class="main-nav-item" (hover)="animateUnderline=!animateUnderline">
+      <span class="text-overlay" [ngClass]="animate ? 'animate' : ''"></span>
+      <a [ngClass]="animate ? 'animate' : ''" class="main-nav-link" [routerLink]="['/blog']"
+        [routerLinkActive]="'active animateActive'" (click)="open=!open; showContact = false">
+        Ind. Insights
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div class="contact-full-size" id="contact-full-size" [ngClass]="navService.isOpen == true ? 'active' : ''"
+  (click)="closeContact($event)">
+  <contact-form *ngIf="navService.isOpen == true"></contact-form>
+</div> -->

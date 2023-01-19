@@ -1,0 +1,14 @@
+<div class="logos-grid" *ngIf="comingFrom == 'about'">
+  <div class="opacity-0" [ngClass]="inViewPort ? 'animated animatedFadeInUp fadeInUp' : ''"
+    *ngFor="let item of clientsLogos">
+    <img [src]="item.url" alt="Waypoint Clients" loading="lazy">
+  </div>
+</div>
+
+<div class="logos-slider" *ngIf="comingFrom == 'home'">
+  <ngx-slick-carousel class="carousel client-logos" [config]="logosSlider">
+    <div ngxSlickItem class="logos-slide slide" *ngFor="let item of clientsLogos">
+      <img [src]="item.url" alt="Waypoint Clients" loading="lazy">
+    </div>
+  </ngx-slick-carousel>
+</div>

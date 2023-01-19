@@ -1,0 +1,29 @@
+.no-page-found{
+    margin-top: -104px;
+    inset: 0;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-image: url('https://cdn.waypoint.la/wp-content/themes/waypoint/assets/images/bgr_error.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 4rem;
+    .no-page-container{
+        position: relative;
+    }
+    .info-container{
+        text-align: center;
+        font-size: 2rem;
+        h1, p{
+            color: white
+        }
+        h1{
+            font-size: 40vw;
+        }
+        .navlink{
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+    }
+}

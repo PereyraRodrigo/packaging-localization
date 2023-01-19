@@ -1,0 +1,144 @@
+.relative {
+  position: relative;
+}
+.containerForm{
+  padding: 4rem 0;
+}
+.career-main {
+  color: white;
+
+  article {
+    padding: 4rem 1rem;
+  }
+}
+
+.career-body-content p {
+  margin-bottom: 1rem;
+}
+
+.career-body {
+  p {
+    margin-bottom: 1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.3rem;
+  }
+
+  ul:not(.snapshot-list) {
+    list-style: disc;
+    padding-left: 1rem;
+
+    li {
+      margin-bottom: 0.5rem;
+      font-weight: 300;
+    }
+  }
+
+  .snapshot-container {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+
+    .snapshot-list {
+      column-count: 2;
+
+      li {
+        margin-bottom: 1rem;
+        font-weight: 300;
+
+        span {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+.success-message-container {
+  text-align: left;
+  padding: 2rem;
+  background-color: #fff;
+  color: #4f4f4f;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  line-height: 1.2rem;
+}
+
+.show-form-button {
+  background-color: white;
+  color: black;
+}
+
+.button-send {
+  background-color: var(--color-purple);
+  color: white;
+  border: none;
+}
+
+.career-title {
+  margin-bottom: 2rem;
+  color: #fff;
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  span {
+    font-weight: 400;
+    display: block;
+  }
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #454545;
+  border: none;
+  border-radius: 5px;
+  color: white;
+
+  &::placeholder {
+    color: rgb(241, 241, 241);
+  }
+
+  &:focus {
+    outline: 2px solid var(--color-purple);
+  }
+
+  &:invalid {
+    outline: 2px solid var(--color-purple);
+  }
+
+  &:invalid:focus {
+    outline: 2px solid var(--color-danger);
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+.characters-left {
+  position: absolute;
+  right: 0;
+  font-weight: 500;
+  padding: 0.6rem;
+  box-shadow: 0px 0px 14px 0px rgba(89, 0, 255, 1);
+  border-radius: 10px;
+}
+
+@media (min-width: 815px) {
+  .career-main {
+    color: white;
+
+    article {
+      padding: 4rem 0rem;
+    }
+  }
+}

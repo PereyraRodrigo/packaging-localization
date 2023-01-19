@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+.main-game{
+    background-color: black;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Press Start 2P', cursive;
+}
+canvas {
+    box-shadow: 0 0 1px 2px #ffffff;
+    border-radius: 3px;
+    margin-top: 1rem;
+}
+.game-container{
+    width: 800px;
+    h1{
+        margin-bottom: 1rem;
+        text-align: center;
+        font-size: 1.5rem;
+        letter-spacing: 6px;
+    }
+}
+.score-board {
+    position: relative;
+    .board {
+        display: flex;
+        flex-direction: revert;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+    }
+}
+.message {
+    position: absolute;
+    top: 270px;
+    /* left: 300px; */
+    font-size: 4rem;
+    width: 100%;
+    text-align: center;
+    opacity: 0.5;
+    h4{
+        margin-top: 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: color .5s;
+        &:hover{
+            color: var(--color-purple);
+        }
+    }
+}
+
+.player {
+    padding: 3rem;
+    font-size: 4rem;
+    font-weight: bold;
+    color: rgb(151, 151, 151);
+    opacity: 0.5;
+}
+
+.muteSoundContainer{
+    position: relative;
+    opacity: .5;
+    .soundBtn{
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+    }
+}
+
+.social-share-modal{
+    position: fixed;
+    inset: 0;
+    background-color: #ffffff73;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .modal__body {
+        background-color: white;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.25rem;
+    }
+}
+

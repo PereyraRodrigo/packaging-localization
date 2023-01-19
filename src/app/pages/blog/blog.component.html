@@ -1,0 +1,93 @@
+<header class="fadeIn">
+  <div class="blog-hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-1 col-xl-2">
+          <h1 class="category-title capitalize">{{pageTitle}}</h1>
+        </div>
+      </div>
+    </div>
+    <img src="{{imgUrl}}/img/blog/blog-header.jpg" alt="WAYPOINT Blog">
+  </div>
+  <div class="overlay"></div>
+  <div id="scroll-to"></div>
+</header>
+
+<main class="blog-main fadeIn">
+  <div class="container">
+    <div class="row">
+      <section id="blog-posts" class="blog-posts" data-section="blog-posts">
+        <div class="post-items">
+          <div class="post-card pointer" *ngFor="let blogItem of $posts | async" [hidden]="loading"
+            [routerLink]="[getCategorySlug(blogItem.categories[0]), blogItem.slug]">
+            <div class="card-content" aria-label="{{blogItem.title}}">
+              <div class="card-img animated-background">
+                <img src="{{blogItem.thumbnail}}" alt="{{blogItem.title}}" lazy (load)="imageLoaded($event)">
+              </div>
+              <div class="card-body">
+                <span class="category-tag" *ngFor="let category of blogItem.categories">{{category.name}}</span>
+                <h4 class="card-title" [innerHTML]="blogItem.title"></h4>
+                <p [innerHTML]="blogItem.excerpt"></p>
+              </div>
+              <div class="card-footer">
+                <a [routerLink]="[getCategorySlug(blogItem.categories[0]), blogItem.slug]"
+                  class="card-footer-link pointer" aria-label="Read more">Read more</a>
+              </div>
+            </div>
+          </div>
+          <!-- ghost posts cards -->
+          <div class="post-card ghost-post-card" *ngFor="let item of ghostQuantity" [hidden]="!loading">
+            <div class="square"></div>
+            <div class="text-short">
+              <div class="text-placeholder"></div>
+            </div>
+            <div class="text">
+              <div class="text-placeholder"></div>
+              <div class="text-placeholder"></div>
+              <div class="text-placeholder"></div>
+            </div>
+          </div>
+        </div>
+        <div class="pagination-container">
+          <div class="pagination-controllers">
+            <button class="prev" [disabled]="pageNumber <= 1" (click)="pageNumber > 1 && paginate(-1)"><span>←</span>
+              PREVIOUS</button>
+            <button class="next" (click)="paginate(1)">NEXT <span>→</span></button>
+          </div>
+        </div>
+      </section>
+      <!-- create a custom component -->
+      <aside>
+        <blog-aside [categories]="categories" *ngIf="!loading" (onQueryChanged)="onSearchQueryChanged($event)"
+          (onCatQueryChanged)="onCategoryQueryChanged($event)"></blog-aside>
+        <!-- Ghost -->
+        <div class="ghost-post-card" [hidden]="!loading">
+          <div class="text">
+            <div class="text-placeholder"></div>
+          </div>
+          <div class="text-short">
+            <div class="text-placeholder"></div>
+          </div>
+          <div class="text-short">
+            <div class="text-placeholder"></div>
+          </div>
+          <div class="text-short">
+            <div class="text-placeholder"></div>
+          </div>
+          <div class="text">
+            <div class="text-placeholder"></div>
+          </div>
+          <div class="text-short">
+            <div class="text-placeholder"></div>
+          </div>
+          <div class="text-short">
+            <div class="text-placeholder"></div>
+          </div>
+          <div class="text-short">
+            <div class="text-placeholder"></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>

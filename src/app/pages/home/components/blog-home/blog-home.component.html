@@ -1,0 +1,30 @@
+<section id="blog-home" class="home-section blog-home" data-section="blog-home" snInViewport [inViewportOptions]="{
+            rootMargin: '-300px 0px'
+        }" (inViewportChange)="onInViewportChange($event)">
+  <div class="container-big">
+    <div class="row a-center">
+      <div class="col-xl-30 col-1  p-sl-1">
+        <h1 class="big-title">
+          Industry
+          <br>
+          Insights
+        </h1>
+        <h2 [ngClass]="isVisible ? 'colorIn' : ''">WAYPOINT Blog</h2>
+        <a class="link-arrow show-screen pointer" aria-label="View our work" [routerLink]="['/blog']">View All</a>
+        </div>
+      <div class="col-xl-70 d-flex col-1 j-start opacity-0" [ngClass]="isVisible ? 'animated animatedFadeInUp fadeInUp' : ''">
+        <div class="blog-card-thumb" *ngFor="let blogItem of blogPosts">
+          <figure class="pointer" (click)="navigate(blogItem.slug, blogItem.categories[0])">
+            <img src="{{blogItem.thumbnail}}" alt="{{blogItem.title}}" loading="lazy">
+            <figcaption>{{blogItem.title}}</figcaption>
+            <div class="overlay"></div>
+          </figure>
+        </div>
+      </div>
+      <div class="col-xl-30 col-1  p-sl-1 show-mobile">
+        <a class="link-arrow show-mobile pointer" aria-label="View our work" [routerLink]="['/blog']">View All</a>
+      </div>
+      </div>
+
+  </div>
+</section>

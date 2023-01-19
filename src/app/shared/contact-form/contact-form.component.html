@@ -1,0 +1,112 @@
+
+<div class="container-full fadeIn slow" (click)="closeThis($event)" >
+    <div class="row flex-column a-center j-center h-100" id="contact-container" data-name="contact-container">
+        <div class="threshold">
+            <h1 class="form-title" *ngIf="messageSended == false">Get in touch with us</h1>
+            <div class="form-container" *ngIf="messageSended == false">
+                    <form action="" (ngSubmit)="sendMessage()" [formGroup]="contactForm" autocomplete="nope">
+                        <div class="form-item blurContent fadeIn" *ngIf=" activeStep=='name' ">
+                            <label for="name">What's your name?</label>
+                            <input class="form-control"
+                                    type="text"
+                                    name="name"
+                                    id="name"
+                                    placeholder=""
+                                    formControlName="name" 
+                                    autocomplete="nope"
+                                    (keydown.tab)="navigateToIndex(1)">
+                        </div> 
+                        <div class="form-item blurContent fadeIn" *ngIf=" activeStep=='companyName' ">
+                            <label for="companyName">Company name</label>
+                            <input class="form-control"
+                                    type="text"
+                                    name="companyName"
+                                    id="companyName"
+                                    placeholder=""
+                                    formControlName="companyName" 
+                                    autocomplete="nope"
+                                    (keydown.tab)="navigateToIndex(2)">
+                        </div> 
+                        <div class="form-item blurContent fadeIn" *ngIf=" activeStep=='email' ">
+                            <label for="email">EMAIL</label>
+                            <input class="form-control"
+                                    type="email"
+                                    name="email"
+                                    placeholder=""
+                                    [pattern]="emailPattern"
+                                    formControlName="email"
+                                    (keydown.tab)="navigateToIndex(3)">
+
+                        </div>
+                        <div class="form-item blurContent fadeIn" *ngIf=" activeStep=='phone' ">
+                            <label for="phone">Phone Number (optional)</label>
+                            <input class="form-control"
+                                    type="tel"
+                                    name="phone"
+                                    id="phone"
+                                    placeholder=""
+                                    formControlName="phone"
+                                    (keydown.tab)="navigateToIndex(4)">
+                        </div>
+                        <div class="form-item blurContent fadeIn" *ngIf=" activeStep=='message' ">
+                            <label for="message">Message</label>
+                            <textarea 
+                                name="message"
+                                id="message" 
+                                cols="1" 
+                                rows="1"
+                                class="form-control"
+                                formControlName="message"
+                                >
+                            </textarea>
+                        </div>
+                        <div class="form-navigation">
+                                <button id="previous" class="previous-button" [disabled]="stepIndex == 0" (click)="navigateSteps(-1)" type="button">⇽ Back</button>
+                                <button id="next" class="continue-button" [disabled]="stepIndex == steps.length - 1" (click)="navigateSteps(1)" type="button">continue</button>
+                                <button id="send" class="continue-button"  *ngIf="stepIndex == steps.length - 1" type="submit">send</button>
+                        </div>
+
+                        <div class="g-recaptcha mt-4" id="recaptcha-el"
+                        data-sitekey="6Ldb2OccAAAAABnYWBenurhKXUK1KsLmNzLzrykM"
+                        data-size="invisible"
+                        >
+                    </div>
+                    </form>
+                    <div class="form-navigation-aside">
+                            <ul>
+                            <li class="navigation-icon pointer"
+                                   *ngFor="let dot of steps; let i = index" 
+                                [ngClass]="{'active' : stepIndex == i}"
+                                (click)="navigateToIndex(i)">  
+                                <span></span>
+                                </li>
+                            </ul>
+                    </div>
+
+            </div>
+            <div class="form-alerts">
+                <p><small *ngIf="isValidField('name')">We only need your first name.</small></p> 
+                <p><small *ngIf="isValidField('companyName')">company name is mandatory.</small></p> 
+                <p><small *ngIf="isValidField('email')">e-mail should be complete and valid.</small></p> 
+            </div>
+            <div class="success-message-container fadeIn" *ngIf="messageSended == true">
+                <ng-container *ngIf="!hasError">
+                    <h1>Thanks!</h1>
+                    <p>We will get back to you in 24-48 hours tops.</p>
+                    <p>If we don't it means your message failed to reach us, 
+                        
+                        email us at: flyfirstclass@waypoint.la
+                    </p>
+                </ng-container>
+                <ng-container *ngIf="hasError">
+                    <h1 class="err">Oops!</h1>
+                    <p>We had a problem sending the message.</p>
+                    <p>Please try again in a moment.</p>
+                    <p>You also can 
+                        email us at: flyfirstclass@waypoint.la
+                    </p>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

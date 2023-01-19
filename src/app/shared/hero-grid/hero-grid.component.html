@@ -1,0 +1,31 @@
+<section id="hero-section" class="hero-section" data-section="hero-section" *ngIf="!loading">
+  <div class="hero-grid">
+    <div class="grid-item" *ngFor="let gridItem of heroItems, let i = index"
+      (mouseenter)="setActive(i, gridItem.disabled)"
+      [ngClass]="{'disabled' : gridItem.disabled, 'active pointer': selectedIndex === i && !gridItem.disabled}"
+      (click)="gridItem.disabled || navigateTo(gridItem.slug)" aria-label="{{gridItem.title}}">
+
+      <h2 class="grid-item-title capitalize">{{gridItem.title}}</h2>
+      <p class="grid-item-subtitle" *ngIf="gridItem.subtitle">{{gridItem.subtitle}}</p>
+      <!-- Well... -->
+      <div class="border1"></div>
+      <div class="border2"></div>
+      <div class="border3"></div>
+      <div class="border4"></div>
+    </div>
+    <!-- background images -->
+    <div class="background-grid-image" *ngFor="let bg of heroItems, let j = index"
+      [ngClass]="{'visible' : bgVisible == j}">
+      <div class="noise-wrapper" *ngIf="bg.noise">
+        <div class="noise"></div>
+      </div>
+      <img *ngIf="bg.onHoverImage" class="hero-bg-image" [src]="bg.onHoverImage" alt="This is a background"
+        (load)="imageLoaded($event)">
+    </div>
+
+    <div class="overlay" [ngClass]="{'blurBackground': animated}"></div>
+  </div>
+  <div class="down-arrow">
+    <app-animated-arrow></app-animated-arrow>
+  </div>
+</section>

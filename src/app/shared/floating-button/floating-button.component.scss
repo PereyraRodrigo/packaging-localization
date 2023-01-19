@@ -1,0 +1,116 @@
+.hover-cta-reel {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: background-color 1.4s, box-shadow .5s;
+  background-color: var(--color-gray);
+  padding: .5rem;
+  z-index: 2;
+  border-radius: 15rem;
+  box-shadow: 0 0 0 2px var(--color-purple);
+  -webkit-animation: pulseShadow 2s, wiggle 5s;
+  -moz-animation: pulseShadow 2s, wiggle 5s;
+  -o-animation: pulseShadow 2s, wiggle 5s;
+  animation: pulseShadow 2s, wiggle 5s;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+
+  .img-container {
+    vertical-align: middle;
+    display: inherit;
+
+    img {
+      width: 30px;
+      opacity: 0.8;
+      filter: invert(1);
+    }
+  }
+
+  .span-container {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+
+  }
+
+  &:hover {
+    box-shadow: 0 0 10px 2px var(--color-purple);
+    background-color: #fff;
+
+    .span-container {
+      width: 100%;
+      height: 100%;
+      margin-left: .5rem;
+      margin-right: .5rem;
+    }
+
+    .img-container {
+      img {
+        filter: invert(0);
+      }
+    }
+  }
+}
+
+.demo-reel-container {
+  position: fixed;
+  inset: 0;
+
+  backdrop-filter: blur(6px);
+  box-shadow: inset 0px 0px 320px 20px black;
+  right: -100vw;
+  display: none;
+
+  &.active {
+    right: 0;
+    display: flex;
+    z-index: 9;
+  }
+
+  .video-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .close {
+    position: absolute;
+    right: 2vw;
+    top: 2vw;
+    font-size: 2rem;
+    color: white;
+  }
+}
+
+.waypoint-video {
+  width: 90vw;
+  min-height: 50vh;
+}
+
+@media (min-width: 815px) {
+  .demo-reel-container {
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(6px);
+    box-shadow: inset 0px 0px 320px 20px black;
+    right: -100vw;
+    display: none;
+
+    &.active {
+      right: 0;
+      display: flex;
+      z-index: 9;
+    }
+
+    .video-container {
+      iframe {
+        width: 70%;
+        height: 75%;
+      }
+    }
+  }
+}

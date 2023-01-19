@@ -1,0 +1,96 @@
+.side-section {
+  display: flex;
+  flex-direction: column;
+
+  .side-section__title {
+    font-weight: 600;
+    letter-spacing: 4px;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.list-items {
+  li {
+    margin-bottom: 1rem;
+    color: #757575;
+    font-weight: 500;
+    font-size: 1rem;
+    display: flex;
+    overflow: hidden;
+
+    .card-body {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      position: relative;
+      white-space: nowrap;
+
+
+      .card-name {
+        overflow: hidden;
+        line-height: 1.2em;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+
+.search-form {
+  margin-bottom: 3rem;
+
+  .blog-search {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid #cecece;
+    color: #999999;
+    border-radius: 8px;
+  }
+}
+
+.related-post {
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 0px 0px 1px #00000017;
+  justify-content: flex-start;
+
+  .card-arrow {
+    margin-right: 2rem;
+  }
+
+  .thumbnail {
+    height: 60px;
+    margin-right: 1rem;
+
+    img {
+      width: 70px;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+.card-name {
+  font-size: 0.9rem;
+  line-height: 2em;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: normal;
+  font-weight: bold;
+  color: black;
+}
+@media (max-width: 814px){
+  .side-section {
+    margin: 1rem;  
+  }
+}
+@media (max-width: 768px) {
+
+  .side-section {
+    width: 90vw;
+    max-width: 90%;
+  }
+
+}

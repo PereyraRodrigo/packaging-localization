@@ -1,0 +1,107 @@
+<main class="fadeIn">
+    <div class="container-full-padding about-us-container team-grid">
+        <div class="row">
+            <div class="col-xl-60">
+                <div class="about-us-text">
+                    <div class="titles">
+                        <h1 class="title"><span class="colorIn">Creative</span> Production Company</h1>
+                    </div>
+                    <p>
+                        A team of highly skilled producers, developers and marketing artists are at your service. Founded in 2009 WAYPOINT is a full service creative production company. Headquartered in Los Angeles with a second office in Buenos Aires, we are trusted by the biggest names in gaming. Our 5 departments consist of over 200 full time people working (mostly) remotely.
+                    </p>
+                    <p>
+                        Over 13 years ago WAYPOINT started offering creative services with a smile to the game industry. A few years later we got into collectibles in a big way. The experiential division (E3 Fat Chocobo!) followed suit in 2017. In 2019 we brought an indie studio from Argentina into the fold to offer game and software development (Pinball!!). Last but not least our Ecommerce division is delighting fans all over the world since 2020. We are WAYPOINT.
+                    </p>
+                </div>
+            </div>
+            <div class="col-xl-40 company-animation">
+                <div class="animation-container">
+                    <animations-app [animation]="'aboutUs.json'" [loop]="false"></animations-app>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<div class="separator"></div>
+<section id="our-team" class="our-team" data-section="our-team">
+    <h1 class="section-title">Our <span class="colorIn">Protagonists.</span></h1>
+    <div class="team-grid">
+        <div class="container-full">
+            <div class="row">
+                <div class="col-50">
+                    <div class="team-card">
+                        <img class="card-image" src="https://cdn.waypoint.la/wp-content/uploads/2021/12/sean.jpg" alt="Waypoint Team" (load)="imageLoaded($event)">
+                    </div>
+                    <div class="card-info">
+                        <h1 class="title">Sean Murrin </h1>
+                        <h3 class="subtitle">CEO <img (click)="goTo('https://www.linkedin.com/in/seanmurrin/')" class="linkedin-logo" src="{{imgUrl}}/img/logos/linkedin.png" alt="Sean Murrin Linkedin"></h3>
+                    </div>
+                </div>
+                <div class="col-50">
+                    <div class="team-card">
+                        <img class="card-image" src="https://cdn.waypoint.la/wp-content/uploads/2021/12/leandro.jpg" alt="Waypoint Team" (load)="imageLoaded($event)">
+                    </div>
+                    <div class="card-info text-right">
+                        <h1 class="title">Leandro Gonzalez </h1>
+                        <h3 class="subtitle">CTO <img (click)="goTo('https://www.linkedin.com/in/leandro-gonzalez-trickgs/')" class="linkedin-logo" src="{{imgUrl}}/img/logos/linkedin.png" alt="Leandro Gonazalez Linkedin"></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section id="producers" class="producers" data-section="producers">
+    <div class="col-1">
+        <h1 class="section-title"><span class="colorIn">The people </span>who make it happen.</h1>
+        <!-- <h1 class="section-title">Producers, the people who make it happen.</h1> -->
+    </div>
+    <div class="team-grid">
+        <div class="container-full-padding">
+            <div class="row j-center">
+                <div class="col">
+                    <div class="grid-row-center gap-staff">
+                        <div class="team-card-small" *ngFor="let p of producers">
+                            <div class="card-thumb">
+                                <img src="{{p.image}}" alt="">
+                            </div>
+                            <div class="card-body text-left">
+                                <h1 class="title">{{p.name}}</h1>
+                                <h3 class="subtitle">{{p.title}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="separator"></div>
+<section id="testimonials" class="testimonials" data-section="testimonials" *ngIf="testimonials.length > 0">
+    <h1 class="section-title">Customer <span class="colorIn">Testimonials.</span></h1>
+    <div class="slider-container">
+        <ngx-slick-carousel class="carousel tesimonial-carousel" [config]="sliderConfig">
+            <div ngxSlickItem *ngFor="let slide of testimonials" class="slide">
+                <div class="testimonial-card">
+                    <img src="{{slide.clientLogo}}" alt="{{slide.client}}" >
+                    <p>
+                        {{slide.testimonial}}
+                    </p>
+                    <h4>{{slide.client}}</h4>
+                </div>
+            </div>
+        </ngx-slick-carousel>
+        </div>
+</section> 
+<div class="separator"></div>
+<section id="client-logos" class="client-logos" data-section="client-logos">
+    <div class="container-full">
+        <div class="col-2">
+            <h1 class="section-title text-center">
+                <span class="colorIn">Our.</span> Clients
+            </h1>
+        </div>
+    </div>
+    <clients-logos [inViewPort]="true" [comingFrom]="'about'"></clients-logos>
+</section>
+

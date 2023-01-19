@@ -1,0 +1,65 @@
+<main class="fadeIn career-main">
+  <article>
+    <div class="container">
+      <div class="row">
+        <section id="career-post" class="career-post" data-section="career-post" *ngIf="jobPost">
+          <div class="career-title">
+            <h1>{{jobPost.title}}
+              <span *ngIf="jobPost.seniority">{{jobPost.seniority}}</span>
+              </h1>
+              </div>
+              <div class="career-body">
+                <div class="career-body-content" [innerHtml]="postBody">
+
+            </div>
+            <div class="snapshot-container">
+              <p><strong>SNAPSHOT:</strong></p>
+              <ul class="snapshot-list">
+                <li><span *ngIf="jobPost.job_type">Type:</span> {{jobPost.job_type}}</li>
+                <li><span *ngIf="jobPost.type">Job Type:</span> {{jobPost.type}}</li>
+                <li><span *ngIf="jobPost.industry">Industry:</span> {{jobPost.industry}}</li>
+                <li><span *ngIf="jobPost.education">Education:</span> {{jobPost.education}}</li>
+                <li><span *ngIf="jobPost.experience">Experience:</span> {{jobPost.experience}}</li>
+                <li><span *ngIf="jobPost.location">Location:</span> {{jobPost.location}}</li>
+                <li><span *ngIf="jobPost.starting">Starting:</span> {{jobPost.starting}}</li>
+              </ul>
+            </div>
+            </div>
+            <div class="form-container fadeIn" *ngIf="showForm == true && messageSended == false">
+              <form (ngSubmit)="sendMessage()" [formGroup]="careerForm" class="relative">
+              <input class="form-control" type="text" name="name" id="name" placeholder="Name* (5 characters minimum)" minlength="5"
+                formControlName="name" autocomplete="nope">
+              <input class="form-control" type="email" name="email" id="email" placeholder="Email*" formControlName="email"
+                autocomplete="nope">
+              <input class="form-control" type="text" name="portfolio" id="portfolio" placeholder="Portfolio link"
+                formControlName="portfolioLink" autocomplete="nope">
+              <input class="form-control" type="text" name="linkedin" id="linkedin" placeholder="Linkedin link"
+                formControlName="linkedInLink" autocomplete="nope">
+              <textarea name="message" id="message" cols="1" rows="6" minlength="50" class="form-control" formControlName="message"
+                placeholder="Why are you the best choice for this position? (50 characters minimum)"
+                [(ngModel)]="remainingText">
+                            </textarea>
+              <span class="characters-left" *ngIf="remainingText.length">{{remainingText.length}}/50</span>
+              <button id="send" class="button-primary-white button-send pointer" type="submit">Apply for this
+                job</button>
+              </form>
+              </div>
+          <a *ngIf="showForm == false && messageSended == false" class="button-primary-white show-form-button pointer"
+            (click)="showForm = true" aria-label="Apply for this job">Apply for this job</a>
+          <div class="success-message-container fadeIn" *ngIf="messageSended == true">
+            <ng-container *ngIf="!hasError">
+              <p>
+                Our HR department has received your application and will review it.
+                <br>
+                We don’t yet have the ressources to respond to all applications but we are working on it.
+              </p>
+              <a class="button-primary-white" routerLink="/">← Go back to home</a>
+            </ng-container>
+          </div>
+          </section>
+          </div>
+          </div>
+          </article>
+  <div class="g-recaptcha" id="recaptcha-el" data-sitekey="6Ldb2OccAAAAABnYWBenurhKXUK1KsLmNzLzrykM"
+    data-size="invisible"></div>
+</main>

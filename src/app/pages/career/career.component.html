@@ -1,0 +1,36 @@
+<main class="fadeIn">
+  <div class="container-full-padding career-container">
+    <div class="row j-center">
+      <div class="col">
+        <div class="titles">
+          <h1 class="title"><span class="colorIn">Join.</span> The Family</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="career-grid" id="career-grid">
+    <div class="container-full">
+      <div class="grid-row">
+        <div class="grid-item fadeIn" *ngFor="let post of posts">
+
+          <div class="career-card pointer" (click)="navigate(post.slug)">
+            <span class="positions-number">
+          
+              {{post.open_positions || 1}}</span>
+
+<div class="card-header">{{post.title}}
+  <span *ngIf="post.seniority">{{post.seniority}}</span>
+</div>
+<div class="card-footer">
+  <span class="location-name">{{post.location}}</span>
+  <a>View more</a>
+</div>
+
+<div class="bg-logo"><img src="https://cdn.waypoint.la/wp-content/uploads/2021/09/logo-White.png"></div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+</main>

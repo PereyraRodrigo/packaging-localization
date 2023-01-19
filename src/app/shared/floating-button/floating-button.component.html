@@ -1,0 +1,26 @@
+<div class="hover-cta-reel pointer active pulseShadow" 
+    (click)="active = !active"
+    >
+    <div class="img-container">
+        <img src="https://cdn.waypoint.la/wp-content/uploads/2021/10/play-1.png" alt="Our reel">
+    </div>
+    <div class="span-container">
+        <span>Launch demo reel</span>
+    </div>
+</div>
+
+<div class="demo-reel-container"
+*ngIf="active"
+[ngClass]="active ? 'active' : ''"
+(click)="active = !active"
+>
+    <a class="close pointer" (click)="active = !active" aria-label="Close video">✖</a>
+    <div class="video-container">
+        <iframe class="waypoint-video"
+            [src]="video" 
+            title="Waypoint demo reel" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="container containerForm">
+    <div class="career-title text-center">
+        <h1>Contact us</h1>
+    </div>
+    <div class="form-container fadeIn">
+        <form class="relative">
+        <input class="form-control" type="text" name="name" id="name" placeholder="Full Name" minlength="5"
+          formControlName="name" autocomplete="nope">
+        <input class="form-control" type="email" name="email" id="email" placeholder="Email" formControlName="email"
+          autocomplete="nope">
+        <input class="form-control" type="text" name="company" id="company" placeholder="Company"
+          formControlName="portfolioLink" autocomplete="nope">              
+        <textarea class="form-control" cols="1" rows="6" placeholder="Your Inquiry"></textarea>
+        <button id="send" class="button-primary-white button-send pointer" type="submit">Book a call!</button>
+        </form>
+    </div>
+</div>
+
+
+
+<!--original one-->
+
+<!-- <div class="form-container fadeIn" *ngIf="showForm == true && messageSended == false">
+    <form (ngSubmit)="sendMessage()" [formGroup]="careerForm" class="relative">
+    <input class="form-control" type="text" name="name" id="name" placeholder="Name* (5 characters minimum)" minlength="5"
+      formControlName="name" autocomplete="nope">
+    <input class="form-control" type="email" name="email" id="email" placeholder="Email*" formControlName="email"
+      autocomplete="nope">
+    <input class="form-control" type="text" name="portfolio" id="portfolio" placeholder="Portfolio link"
+      formControlName="portfolioLink" autocomplete="nope">
+    <input class="form-control" type="text" name="linkedin" id="linkedin" placeholder="Linkedin link"
+      formControlName="linkedInLink" autocomplete="nope">
+    <textarea name="message" id="message" cols="1" rows="6" minlength="50" class="form-control" formControlName="message"
+      placeholder="Why are you the best choice for this position? (50 characters minimum)"
+      [(ngModel)]="remainingText">
+                  </textarea>
+    <span class="characters-left" *ngIf="remainingText.length">{{remainingText.length}}/50</span>
+    <button id="send" class="button-primary-white button-send pointer" type="submit">Apply for this
+      job</button>
+    </form>
+</div> -->

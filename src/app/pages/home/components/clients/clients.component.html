@@ -1,0 +1,14 @@
+<section data-section="clients" id="clients" class="home-section clients" snInViewport [inViewportOptions]="{
+            rootMargin: '-300px 0px'
+        }" (inViewportChange)="onInViewportChange($event)">
+  <div class="container-full">
+    <div class="col-2">
+      <h1 class="big-title text-center">
+        <span [ngClass]="isVisible ? 'colorIn' : ''">Our.</span> Clients
+      </h1>
+    </div>
+  </div>
+  <div class="container-full logos-container">
+    <clients-logos [inViewPort]="isVisible" [comingFrom]="'home'"></clients-logos>
+  </div>
+</section>

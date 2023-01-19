@@ -1,0 +1,31 @@
+<section id="our-work-home" class="home-section our-work-home" data-section="our-work-home"
+  [ngClass]="isVisible ? 'visible' : ''" snInViewport [inViewportOptions]="{
+            rootMargin: '-300px 0px'
+        }" (inViewportChange)="onInViewportChange($event)">
+  <div class="container-big p-sl-1">
+    <div class="col-1 col-xl-2">
+      <h1 class="big-title">
+        <span [ngClass]="isVisible ? 'colorIn' : ''">Creative.</span> Development.
+        <br>
+        Ecommerce. <span [ngClass]="isVisible ? 'colorIn' : ''">Collectibles. </span>Experiential.
+
+      </h1>
+    </div>
+    <div class="col-1 col-xl-2 d-flex flex-column">
+      <p [ngClass]="isVisible ? 'animated animatedFadeInUp fadeInUp' : ''">
+        Our multi-disciplinary approach to the game industry is what makes us stand out. Whether we’re building the next
+        addicting mobile-game sensation or sculpting a giant statue for an upcoming tradeshow, our team’s combined
+        knowledge and skillset helps us bring an unparalleled experience to our clients and their fans. We communicate
+        with our clients constantly and challenge ourselves to always come up with solutions, rather than seeing
+        limitations. When your account manager isn’t emailing you back or your cousin couldn’t manage to finish the
+        artwork, you’ll wish you had called WAYPOINT
+        </p>
+        
+        </div>
+        <div class="col-1 col-xl-2 d-flex flex-column ">
+          <div class="button-animator">
+            <a routerLink="portfolio" class="button-primary-white pointer" aria-label="View our work">View our work</a>
+          </div>
+        </div>
+        </div>
+</section>

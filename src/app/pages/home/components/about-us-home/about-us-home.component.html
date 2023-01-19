@@ -1,0 +1,38 @@
+<section id="about-us-home" class="home-section about-us-home" data-section="about-us-home"
+  [ngClass]="isVisible ? 'visible' : ''" snInViewport [inViewportOptions]="{
+            rootMargin: '-300px 0px'
+        }" (inViewportChange)="onInViewportChange($event)">
+  <div class="container p-sl-1">
+    <div class="row a-center">
+
+      <div class="col-2 d-flex j-center p-relative">
+        <div class="back-logo">
+          <img src="https://cdn.waypoint.la/wp-content/uploads/2021/09/logo-White.png" alt="Waypoint.la">
+        </div>
+        <div class="title-section">
+          <h1 class="big-title">
+            Hello.
+            <br>
+            We Are
+          </h1>
+          <img src="{{this.imgUrl}}/img/logos/waypoint.png" alt="Waypoint" class="about-logo-home">
+
+        </div>
+      </div>
+      <div class="col-2 d-flex flex-column">
+        <div class="inner about-info">
+          <p [ngClass]="isVisible ? 'animated animatedFadeInUp fadeInUp' : ''">
+            In 2009 we started offering creative services with a smile.
+            A few years later we got into collectible items in a big way. Marketing and experiential followed suit in
+            2017.
+            In 2019 we joined forces with an indie studio from Argentina to also offer game and software development.
+            In 2021 the world started booting up again as did our Experiential division.
+          </p>
+          <div class="button-animator">
+            <a class="button-primary-white" aria-label="More about us" routerLink="about">more about us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

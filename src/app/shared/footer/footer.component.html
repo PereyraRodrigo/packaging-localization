@@ -1,0 +1,70 @@
+<footer>
+  <div class="container-full-padding">
+    <div class="row flex-center">
+      <div class="col-12">
+        <div class="footer-location d-flex places-link text-left"
+          [ngClass]="screenSize.getScreenSize() ? 'j-center' : ''">
+          <div class="laba">
+            <a class="location-links" href="https://goo.gl/maps/W7MC6RhbmS8pUFDV9" target="_blank"
+              rel="noreferrer noopener">
+              LA
+            </a>
+            <span>LOS ANGELES</span>
+          </div>
+          <div class="separator">|</div>
+          <div class="laba">
+            <a class="location-links" href="https://goo.gl/maps/XsWV3GGjgjwXxd2n7" target="_blank"
+              rel="noreferrer noopener">
+              BA
+            </a>
+            <span>BUENOS AIRES</span>
+          </div>
+
+        </div>
+        <div class="taglines text-left" [ngClass]="screenSize.getScreenSize() ? 'j-center' : ''">
+          <p class="glitch" attr.data-text="{{tagLine}}">
+
+            - {{tagLine}} -
+          </p>
+        </div>
+        <!-- <div class="cheatcode text-center">
+          <span>↑</span>
+          <span>↑</span>
+          <span>↓</span>
+          <span>↓</span>
+          <span>←</span>
+          <span>→</span>
+          <span>A</span>
+          <span>B</span>
+          <span>A</span>
+        </div> -->
+        <div class="links-container">
+          <div class="social-links">
+            <p class="footer-title">Follow us</p>
+            <ul>
+              <li>
+                <a href="https://www.instagram.com/waypoint.la/" target="_blank">
+                  <img src="https://cdn.waypoint.la/wp-content/uploads/2021/09/isntagram.png" alt="Instagram">
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/WAYPOINT.LA" target="_blank">
+                  <img src="https://cdn.waypoint.la/wp-content/uploads/2021/09/facebook.png" alt="Facebook">
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/WAYPOINT_LA" target="_blank">
+                  <img src="https://cdn.waypoint.la/wp-content/uploads/2021/09/twitter.png" alt="Twitter">
+                </a>
+              </li>
+            </ul>
+            <div class="d-flex flex-center mt-2" *ngIf="screenSize.getScreenSize()">
+              <span class="button-outline-white pointer" aria-label="Contact us" (click)="navService.openContact()" r>contact
+                us</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

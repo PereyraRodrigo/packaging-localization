@@ -1,0 +1,16 @@
+<section *ngIf="!loading" id="product-slider" class="home-section product-slider" data-section="product-slider"
+  [ngClass]="isVisible ? 'visible' : ''" snInViewport [inViewportOptions]="{
+            rootMargin: '-300px 0px'
+        }" (inViewportChange)="onInViewportChange($event)">
+  <div class="container-full">
+    <div class="col-2">
+      <h1 class="big-title text-center">
+        <span [ngClass]="isVisible ? 'colorIn' : ''">Select.</span>
+        and enjoy
+      </h1>
+    </div>
+    <div class="col-2 d-flex flex-column mt-4">
+      <app-featured-slider></app-featured-slider>
+    </div>
+  </div>
+</section>

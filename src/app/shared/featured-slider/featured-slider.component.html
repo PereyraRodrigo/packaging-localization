@@ -1,0 +1,16 @@
+<div id="app">
+    <div class="triple-slider">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+        
+          <div #swiperSlide *ngFor="let slide of portfolioItems" class="swiper-slide" (click)="navigate(slide.slug, slide.category)"> 
+            <img class="bg-image" src="{{ slide.thumbnail.medium }}" alt="" loading="lazy"/>
+            <p class="logo-image logo-image-1" [innerHTML]="slide.title" data-swiper-parallax-x="50%"></p>
+            <div class="overlay"></div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  

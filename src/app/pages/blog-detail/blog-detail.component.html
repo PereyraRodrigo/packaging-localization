@@ -1,0 +1,67 @@
+<header class="fadeIn" *ngIf="!loading">
+  <div class="blog-hero animated-background" *ngIf="post">
+    <img [src]="post.jetpack_featured_media_url" alt="Blog" lazy (load)="imageLoaded($event)">
+  </div>
+  <div class="overlay"></div>
+</header>
+<main class="fadeIn blog-main" *ngIf="!loading">
+  <article>
+    <div class="container">
+      <div class="row">
+        <section id="blog-post" *ngIf="post" class="blog-post" data-section="blog-post">
+          <div class="blog-title">
+
+            <h1 [style.font-size]="fontSize" [innerHTML]="post.title.rendered"></h1>
+            </div>
+            <div class="blog-body" [innerHTML]="postContent">
+            
+            </div>
+            </section>
+            <aside>
+          <blog-aside *ngIf="post" [relatedPosts]="relatedPosts" (onRelatedChanged)="onPostChanged($event)">
+          </blog-aside>
+          </aside>
+          </div>
+          </div>
+          </article>
+</main>
+
+<ng-container *ngIf="loading">
+  <div class="ghost-content">
+
+    <header class="post-card ghost-post-card ghost-hero">
+    
+    </header>
+    <main>
+      <article>
+        <div class="article-titles post-card ghost-post-card">
+          <div class="text">
+            <div class="text-placeholder"></div>
+    
+          </div>
+        </div>
+        <div class="article-body post-card ghost-post-card">
+          <div class="text-short">
+            <div class="text-placeholder"></div>
+          </div>
+          <div class="text">
+            <div class="text-placeholder"></div>
+            <div class="text-placeholder"></div>
+            <div class="text-placeholder"></div>
+          </div>
+        </div>
+        <div class="article-body post-card ghost-post-card">
+          <div class="text-short">
+            <div class="text-placeholder"></div>
+          </div>
+          <div class="text">
+            <div class="text-placeholder"></div>
+    
+          </div>
+        </div>
+      </article>
+    </main>
+    </div>
+    <loader></loader>
+
+</ng-container>

@@ -1,0 +1,27 @@
+<main class="main-game">
+    <div class="game-container">
+        <h1>WAYPONG</h1>
+        <div class="score-board">
+        <div class="board">
+            <div class="player">
+                {{scorePlayer}}
+            </div>
+            <div class="player">|</div>
+            <div class="player">
+                {{scoreCom}}
+            </div>
+        </div>
+        <div class="message" *ngIf="gameOverText != ''">
+            {{gameOverText}}
+
+            <h4 (click)="restart()" *ngIf="gameEnded == true">Play again!</h4>
+        </div>
+        </div>
+        <canvas #pongCanvas width="{{width}}" height="{{height}}"></canvas>
+        <div class="muteSoundContainer">
+            <div class="soundBtn pointer" (click)="muteSound()">
+                <img  src="{{imgUrl}}/img/icons/{{soundIcon}}" alt="Mute sounds">
+            </div>
+        </div>
+    </div>
+</main>

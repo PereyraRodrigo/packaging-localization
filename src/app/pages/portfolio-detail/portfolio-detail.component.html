@@ -1,0 +1,98 @@
+<ng-container *ngIf="post">
+  <a class="back-navigation-top" (click)="goBack()"><img src="/assets/img/icons/leftArrow.png" alt="Go back">Go back</a>
+  <header class="animated-background">
+    <img class="hero-image" #heroImage src="{{ post.acf.hero_image.url }}" alt="{{post.title.rendered}}"
+      (load)="imageLoaded($event)">
+  </header>
+  <main>
+    <div class="article-container">
+      <article>
+        <div class="article-titles">
+          <h1 class="article-title" [style.font-size]="fontSize" [innerHTML]="post.title.rendered"></h1>
+          <h2 class="article-subtitle">{{post.acf.company_name}}</h2>
+        </div>
+        <div class="article-body" [innerHTML]="postContent"></div>
+      </article>
+
+      <section id="portfolio-media" class="portfolio-media" [ngStyle]="{'max-width.px': gallerySectionWidth }"
+        data-section="portfolio-media" *ngIf="slides.length > 0">
+
+        <ngx-slick-carousel #gallerySlider class="carousel portfolio-media-carousel" [config]="productSlider">
+          <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+            <div class="slider-card">
+              <div class="card-thumb pointer">
+                <img (mousedown)="trackMouse()" (click)="showGallery()" *ngIf="slide.type == 'image'"
+                  class="card-thumb-img" src="{{ slide.sizes['medium_large'] }}" alt="{{ slide.title }}"
+                  (loaded)="imageLoaded($event)">
+                <iframe class="iVideo" *ngIf="slide.type == 'video'" [src]='slide.url' frameborder="0"
+                  allowfullscreen></iframe>
+
+              </div>
+            </div>
+          </div>
+        </ngx-slick-carousel>
+      </section>
+    </div>
+  </main>
+  <div class="slider-overlay fadeIn" [ngClass]="showOverlayGallery == true ? 'active' : ''"
+    [hidden]="showOverlayGallery == false" (click)="closeThis($event)">
+    <div class="slider-overlay__container">
+      <div class="carousel-box">
+        <a class="close-overlay pointer" (click)="showOverlayGallery = false">
+          <img src="{{imgUrl}}/img/icons/close.png" alt="Close gallery">
+        </a>
+        <ngx-slick-carousel #carouselModal class="carousel overlay-gallery" [config]="overlaySlideConfig"
+          (afterChange)="afterChange($event)">
+          <div ngxSlickItem *ngFor="let slideThumb of slides" class="slide">
+            <div class="overlay-card">
+              <div class="overlay-card-thumb">
+                <img class="overlay-card-img" *ngIf="slideThumb.type == 'image'" src="{{ slideThumb.url }}"
+                  alt="{{ slideThumb.title }}" (load)="imageLoaded($event)">
+                <iframe class="iVideo" *ngIf="slideThumb.type == 'video'" [src]='slideThumb.url' frameborder="0"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </ngx-slick-carousel>
+        <div class="navigation">
+          <ul>
+            <li class="arrow left" (click)="carouselModal.slickPrev()"><img src="{{imgUrl}}/img/icons/leftArrow.png"
+                alt="Previous Slide"></li>
+            <li class="slide-number">{{currentSlide + 1}}</li>
+            <li>of</li>
+            <li class="slide-number">{{slides.length}}</li>
+            <li class="arrow right" (click)="carouselModal.slickNext()"><img src="{{imgUrl}}/img/icons/leftArrow.png"
+                alt="Next Slide"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="loading">
+  <header class="post-card ghost-post-card ghost-hero">
+
+  </header>
+  <main>
+    <article>
+      <div class="article-titles post-card ghost-post-card">
+        <div class="text">
+          <div class="text-placeholder"></div>
+
+        </div>
+      </div>
+      <div class="article-body post-card ghost-post-card">
+        <div class="text-short">
+          <div class="text-placeholder"></div>
+        </div>
+        <div class="text">
+          <div class="text-placeholder"></div>
+          <div class="text-placeholder"></div>
+          <div class="text-placeholder"></div>
+        </div>
+      </div>
+    </article>
+    <loader></loader>
+  </main>
+
+</ng-container>

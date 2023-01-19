@@ -1,0 +1,310 @@
+section {
+  padding: 2rem 0px;
+
+  .section-title {
+    width: fit-content;
+    margin-inline: auto;
+    margin-block: 4rem;
+    text-align: center;
+    color: white;
+    font-size: 2.2rem;
+    max-width: 90vw;
+
+    span {
+      background: linear-gradient(90deg, rgba(127, 71, 255, 1) 0%, rgba(127, 71, 255, 1) 49%, rgba(255, 255, 255, 1) 49%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      background-size: 0%;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.about-us-text {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  color: white;
+
+  .titles {
+    margin-bottom: 3rem;
+
+    .title {
+      font-size: 3rem;
+
+    }
+
+    .sub-title {
+      font-size: 2.3rem;
+      font-weight: 300;
+      color: var(--color-purple);
+    }
+  }
+
+  p {
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+}
+
+.company-logo {
+  width: 100%;
+}
+
+.animation-container {
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+.company-animation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 75%;
+  }
+}
+
+
+
+.slider-container {
+  max-width: 90vw;
+  margin: 0 auto;
+
+  .testimonial-card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    color: white;
+
+    p {
+      line-height: 1.4rem;
+    }
+
+    img {
+      margin: 0 auto;
+      height: 150px;
+      height: 150px;
+      max-width: 60vw;
+      object-fit: contain;
+    }
+  }
+}
+
+
+
+.about-us-container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.card-info {
+  color: white;
+  padding: 2rem 3.5vw;
+
+  .title {
+    color: #ffffff;
+    margin-bottom: .5rem;
+    font-size: 1rem;
+  }
+
+  .subtitle {
+    color: var(--color-purple);
+  }
+}
+
+.team-card {
+  position: relative;
+  height: 250px;
+
+  .card-image {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    inset: 0;
+    z-index: 1;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &.alternative {
+    height: auto;
+
+    .card-info,
+    .card-image {
+      position: relative;
+    }
+
+    .card-info {
+      top: 0;
+      left: 0;
+      text-align: center;
+      padding-top: 1rem;
+      padding-bottom: 3rem;
+
+      .title {
+        color: white;
+      }
+    }
+  }
+}
+
+//the default class was "gap-1"
+.gap-staff {
+  grid-gap: 1rem;
+  gap: 2rem;
+}
+
+.team-card-small {
+  flex-basis: 100%;
+  width: 259px;
+  position: relative;
+  box-sizing: border-box;
+
+  .card-thumb img {
+    width: 100%;
+    filter: grayscale(1);
+    transition: filter .5s;
+  }
+
+  .card-body {
+    padding: 1rem 0;
+    color: white;
+
+    .title {
+      margin-bottom: .5rem;
+      font-weight: normal;
+    }
+
+    .subtitle {
+      color: var(--color-purple);
+      font-weight: normal;
+    }
+  }
+
+  &:hover {
+    .card-thumb img {
+      width: 100%;
+      filter: grayscale(0);
+    }
+  }
+}
+
+
+
+.separator {
+  width: 60%;
+  margin: 0 auto;
+  height: 1px;
+  background-color: #ffffff1f;
+}
+
+.linkedin-logo {
+  margin-left: .5rem;
+  width: 15px;
+  cursor: pointer;
+}
+
+@media(min-width: 815px) {
+  .team-card {
+    height: 630px;
+
+    &.alternative {
+      .card-info {
+        color: white;
+        padding: 2rem 3.5vw;
+      }
+    }
+
+  }
+
+  .card-info {
+    .title {
+      font-size: 3rem;
+    }
+  }
+
+  section {
+    .section-title {
+      font-size: 4rem;
+    }
+  }
+
+  .team-card-small {
+    flex-basis: 19%;
+    width: 259px;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .slider-container {
+    max-width: 700px;
+    margin: 0 auto;
+
+    .testimonial-card {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+      color: white;
+
+      img {
+        margin: 0 auto;
+        height: 250px;
+        height: 150px;
+        max-width: 60vw;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+@media(min-width: 1073px) {
+  .card-info {
+    .title {
+      font-size: 3rem;
+    }
+  }
+
+  section {
+    .section-title {
+      font-size: 4rem;
+    }
+  }
+
+  .team-card {
+    height: 630px;
+  }
+
+  .slider-container {
+    max-width: 700px;
+    margin: 0 auto;
+
+    .testimonial-card {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+      color: white;
+
+      img {
+        margin: 0 auto;
+        height: 250px;
+        max-width: 250px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .team-grid {
+    max-width: 2500px;
+    margin: 0 auto;
+  }
+}

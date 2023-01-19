@@ -1,0 +1,84 @@
+<header class="fadeIn">
+  <div class="hero" [style.background-image]="'url(' + categoryItem.hero_image + ')'">
+    <div class="container" #hero>
+      <div class="row">
+        <div class="col-1 col-xl-2">
+          <h1 class="cateogry-title capitalize">{{categoryItem.title}}</h1>
+        </div>
+      </div>
+    </div>
+    <div class="navigation-container">
+
+      <div class="nav-item" (click)="navigateCategory(prevItem)" aria-label="Navigate to previos section"><span><img
+            src="/assets/img/icons/leftArrow.png" alt="Navigate to {{prevItem}}"></span><span
+          class="nav-item__link">{{prevItem}}</span></div>
+      <div class="nav-item" (click)="navigateCategory(nextItem)" aria-label="Navigate to next section"> <span
+          class="nav-item__link">{{nextItem}}</span><span> <img src="/assets/img/icons/leftArrow.png"
+            alt="Navigate to {{nextItem}}"> </span></div>
+
+    </div>
+  </div>
+  <div class="ovarlay"></div>
+</header>
+
+<main>
+  <div class="main-top-section">
+    <h1 class="big-title text-center category-top-title" [attr.aria-label]="categoryItem.subtitle">
+      <span>{{categoryItem.subtitle[0]}}.</span>{{categoryItem.subtitle[1]}}
+    </h1>
+    <p>{{categoryItem.description}}</p>
+
+    <!-- <div class="counter" *ngIf="type === 'collectibles'">
+      <div class="random-counter">
+        <div class="random-text">
+          <p class="random-counter-text">Collectible items delivered to date: </p>
+        </div>
+        <div class="counter-number">
+          <span class="number">
+            {{randomCount}}
+          </span>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+
+  <section class="project-grid" id="portfolio" #portfolioContent>
+    <div class="container-full-padding">
+      <div class="grid-row" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
+        <ng-container>
+          <div class="grid-item" *ngFor="let portfolioItem of portfolioItems">
+            <div class="portfolio-card pointer" aria-label="{{portfolioItem.title}}" (click)="navigate(portfolioItem.slug, type)">
+              <!-- click navigates to single item detail -->
+              <div class="card-header animated-background">
+                <img [src]="portfolioItem.thumbnail.small" alt="{{portfolioItem.title}}" (load)="imageLoaded($event)">
+              </div>
+              <div class="card-body">
+                <div class="titles">
+                  <h3 [innerHTML]="portfolioItem.title"></h3>
+                  <h4>{{portfolioItem.company_name}}</h4>
+                </div>
+
+              </div>
+              </div>
+              </div>
+              <div class="loading-badge" [class.visible]="isLoading == true">
+                <div class="inner">
+                  <div class="message">Loading...</div>
+                </div>
+              </div>
+            </ng-container>
+
+      </div>
+      </div>
+      </section>
+      <ng-container *ngIf="isEcommerce">
+        <section class="products-section" id="products-section">
+          <div class="container-full-padding">
+            <h1 class="big-title text-center">Get yourself something nice.</h1>
+            <h1 class="big-title text-center section-subtitle">Right here.</h1>
+            <app-shopify-products></app-shopify-products>
+      </div>
+      </section>
+  </ng-container>
+</main>
