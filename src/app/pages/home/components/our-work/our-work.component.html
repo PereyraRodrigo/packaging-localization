@@ -1,5 +1,27 @@
-<section>
-    <h1 class="text-center  our-work-title">
-        <span class="colorIn">Our.</span>Work
-    </h1>
+<section class="container-full">
+  <h1 class="text-center our-work-title">
+    <span class="colorIn">Our.</span>Work
+  </h1>
+  <section class="project-grid" id="portfolio" #portfolioContent>
+    <div class="container-full-padding">
+      <div class="grid-row-gap">
+        <ng-container>
+          <div class="grid-item" *ngFor="let Item of PItem">
+            <div class="portfolio-card pointer" (click)="Item.link">
+              <!-- click navigates to single item detail -->
+              <div class="card-header animated-background">
+                <img [src]="Item.img" />
+              </div>
+              <div class="card-body">
+                <div class="titles">
+                  <h3 [innerHTML]="Item.title" ></h3>
+                  <h4 [innerHTML]="Item.company" ></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </section>
 </section>

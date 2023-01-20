@@ -5,7 +5,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 
-declare const gtag: Function;
+/* declare const gtag: Function; */
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -33,9 +33,9 @@ export class AppComponent {
       this.router.events.pipe(
         filter(event => event instanceof NavigationEnd)
       ).subscribe((event: NavigationEnd) => {
-         gtag('event', 'page_view', {
+         /* gtag('event', 'page_view', {
             page_path: event.urlAfterRedirects
-         })
+         }) */
       })
 
     }

@@ -7,9 +7,49 @@
       <h1 *ngIf="navService.getLogoType == 'text'" class="animated animatedFadeInUp fadeInUp"
         [innerHTML]="navService.getLogoContent"></h1>
     </a>
+    <div class="cta-nav">
+      <div class="contact-menu">
+        <span class="show-contact pointer" *ngIf="router.url != '/contact'" (click)="navService.openContact()"
+          aria-label="Open contact form">
+          <span class="closeC" *ngIf="!navService.isOpen">CONTACT</span>
+          <span class="closeX" *ngIf="navService.isOpen">✖</span>
+        </span>
+      </div>      
+    </div>
+  </div>
+  <!-- navbar top-->
+
+
+
+</nav>
+<!-- CONTACT FORM CONTAINER -->
+<div class="contact-full-size" id="contact-full-size" [ngClass]="navService.isOpen == true ? 'active' : ''"
+  (click)="closeContact($event)">
+  <contact-form *ngIf="navService.isOpen == true"></contact-form>
+</div>
+
+
+
+<!--working one-->
+
+<!-- <nav class="top-nav" #navBar [ngClass]="isScrolled ? 'scrolled' : 'normal'">  
+  <div class="inner-content">
+
+    <a [href]="navService.getLogoLink" class="navbar-logo">
+      <img *ngIf="navService.getLogoType == 'logo'" [src]="navService.getLogo" alt="Waypoint">
+      <h1 *ngIf="navService.getLogoType == 'text'" class="animated animatedFadeInUp fadeInUp"
+        [innerHTML]="navService.getLogoContent"></h1>
+    </a>
     <div class="contact-menu">
       <p class="service-nav closeC">Package <span class="colorIn">Localization</span></p>
     </div>
+  </div>
+</nav> -->
+
+
+
+
+
     <!-- <div class="cta-nav">
       <div class="contact-menu">
         <span class="show-contact pointer" *ngIf="router.url != '/contact'" (click)="navService.openContact()"
@@ -30,12 +70,10 @@
         </span>
       </div>
     </div> -->
-  </div>
   <!-- navbar top-->
 
+<!--working one-->
 
-
-</nav>
 <!-- navigation -->
 
 <!-- <div class="full-size-menu" [ngClass]="open ? 'open' : 'close'" (click)="closeThis($event)">

@@ -343,6 +343,12 @@ a{
 	flex-flow: row wrap;
 	justify-content: flex-start;
 }
+.grid-row-gap {
+	display: flex;
+	flex-flow: row wrap;
+	grid-gap: 3rem;
+	justify-content: center;
+}
 .grid-row-center {
 	display: flex;
 	flex-flow: row wrap;

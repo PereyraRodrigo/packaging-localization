@@ -1,23 +1,153 @@
 .our-work-title {
-    width: fit-content;
-    margin-inline: auto;
-    margin-block: 4rem;
-    text-align: center;
-    color: white;
-    font-size: 4rem;
-    max-width: 90vw;
+  width: fit-content;
+  margin-inline: auto;
+  margin-block: 4rem;
+  text-align: center;
+  color: white;
+  font-size: 4rem;
+  max-width: 90vw;
 
-    span {
-      background: linear-gradient(
-        90deg,
-        rgba(127, 71, 255, 1) 0%,
-        rgba(127, 71, 255, 1) 49%,
-        rgba(255, 255, 255, 1) 49%
-      );
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      background-size: 0%;
-      background-repeat: no-repeat;
+  span {
+    background: linear-gradient(
+      90deg,
+      rgba(127, 71, 255, 1) 0%,
+      rgba(127, 71, 255, 1) 49%,
+      rgba(255, 255, 255, 1) 49%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 0%;
+    background-repeat: no-repeat;
+  }
+}
+
+.card-header {
+  img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    transition: 1s;
+    /* opacity: 0; */
+  }
+}
+
+.titles {
+  color: white;
+
+  // width: 75%;
+  h3 {
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+  }
+
+  h4 {
+    color: #757575;
+  }
+}
+
+.cta-section {
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.card-body {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.grid-item {
+  flex-basis: 100%;
+  width: 259px;
+  aspect-ratio: 4 / 3;
+  position: relative;
+  box-sizing: border-box;
+  opacity: 1;
+  background: transparent;
+  background-color: black;
+  transition: transform 3s;
+  transform: scale(1);
+  box-shadow: 0px 0px #00000078;
+  border: 1px solid #454545;
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.04);
+    z-index: 1;
+    background-color: var(--color-gray);
+    box-shadow: 0px 3px 19px 7px #00000078;
+  }
+}
+
+@media (min-width: 815px) {
+  .grid-item {
+    flex-basis: calc(100% / 2);
+    opacity: 0.8;
+    transition: 0.4s;
+
+    &:hover {
+      opacity: 1;
     }
   }
+}
+
+@media (min-width: 1100px) {
+  .grid-item {
+    flex-basis: calc(100% / 4);
+    transition: 0.4s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+@media (min-width: 2100px) {
+  .grid-item {
+    height: 355px;
+    flex-basis: calc(100% / 5);
+
+    .card-header {
+      img {
+        height: 250px;
+      }
+    }
+  }
+}
+
+@media (min-width: 2900px) {
+  .grid-row,
+  .grid-row-center {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 3000px;
+    margin: 0 auto;
+
+    .grid-item {
+      height: 455px;
+      flex-basis: calc(100% / 6);
+
+      .card-header {
+        img {
+          height: 350px;
+        }
+      }
+    }
+  }
+}
+
+.post-card.ghost-post-card {
+  flex-basis: 25%;
+  padding: 0.3rem;
+}
+.animated-background--img{
+  /* background-image: url("../../../../../assets/img/seo/waypoint.jpg"); */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+}

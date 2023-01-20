@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
 
   updateTags(){
     let thumb = `${this.imgUrl}/img/seo/waypoint.jpg`
+    let thumbb = `../../../../src/assets/img/seo/waypoint.jpg`
     let description = `WAYPOINT is a creative production company. Team of highly skilled producers and Marketing Artists at your service.`;
     this.titleService.setTitle(`WAYPOINT | Package Localization`);
     this.metaTagService.updateTag({ 
@@ -42,11 +43,11 @@ export class HomeComponent implements OnInit {
     })
     this.metaTagService.updateTag({ 
       property: 'og:image', 
-      content: `${thumb}` 
+      content: `${thumbb}` 
     })
     this.metaTagService.updateTag({ 
       name: 'twitter:image', 
-      content: `${thumb}` 
+      content: `${thumbb}` 
     })    
   }
 
