@@ -7,18 +7,21 @@
       <div class="grid-row-gap">
         <ng-container>
           <div class="grid-item" *ngFor="let Item of PItem">
-            <div class="portfolio-card pointer" (click)="Item.link">
-              <!-- click navigates to single item detail -->
-              <div class="card-header animated-background">
-                <img [src]="Item.img" />
-              </div>
-              <div class="card-body">
-                <div class="titles">
-                  <h3 [innerHTML]="Item.title" ></h3>
-                  <h4 [innerHTML]="Item.company" ></h4>
+            <a [href]="Item.link" target="_blank">
+                <div class="portfolio-card pointer" [click]="Item.link">
+                  <!-- click navigates to single item detail -->
+                  <div class="card-header animated-background">
+                    <img [src]="Item.img" />
+                  </div>
+                  <div class="card-body">
+                    <div class="titles">
+                      <h3 [innerHTML]="Item.title" ></h3>
+                      <h4 [innerHTML]="Item.company" ></h4>
+                      <!-- <a [href]="Item.link">here</a> -->
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+            </a>
           </div>
         </ng-container>
       </div>
