@@ -1,6 +1,8 @@
 @use 'sass:math';
 
 @import '~ngx-sharebuttons/themes/default';
+@import '../node_modules/slick-carousel/slick/slick.scss';
+@import '../node_modules/slick-carousel/slick/slick-theme.scss';
 
 :root {
 	--color-purple: #7f47ff;
@@ -12,14 +14,6 @@
 .lockScroll{
 	overflow-y: hidden;
 }
-
-app-portfolio-detail {
-	.slick-slider .slick-track {
-    // height: 200px !important;
-	}
-
-}
-
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
   v2.0 | 20110126
@@ -885,63 +879,6 @@ app-portfolio-detail > main > article > div.article-body > p{
 	}
 
 }
-
-
-
-
-.portfolio-media{
-	.slick-prev {
-		left: 25px !important;
-		background-image: url(./assets/img/icons/previous.svg);
-	}
-	
-	.slick-next {
-		right: 25px;
-		background-image: url(./assets/img/icons/next.svg);
-	}
-
-	.slick-prev, .slick-next{
-		height: 100%;
-		background-position: center;
-		background-repeat: no-repeat;
-		width: 100px;
-		background-size: 2rem;
-		filter: drop-shadow(2px 2px 14px black);
-		opacity: .3;
-		transition: opacity .4s;
-		// z-index: 1;
-		&:hover:not([aria-disabled='true']){
-			opacity: 1;
-		}
-		&::before{
-			content: none;
-		}
-	}
-}
-
-.slider-overlay{
-
-	.slick-track {
-		display: flex;
-	}
-	.slick-track .slick-slide {
-		display: flex;
-		height: auto;
-		align-items: center;
-		justify-content: center;
-	}
-	.slick-prev {
-		left: 45px !important;
-		z-index: 9;
-		background-image: url(./assets/img/icons/previous.svg);
-	}
-	
-	.slick-next {
-		right: 45px;
-		background-image: url(./assets/img/icons/next.svg);
-	}
-}
-
 
 .ohhimark{
     position: fixed;
