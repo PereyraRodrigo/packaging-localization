@@ -51,7 +51,11 @@
     }
   }
 }
-
+@media (max-width: 815px){
+  .logos-grid{
+    padding: 0 2rem;
+  }
+}
 @media(min-width: 1073px) {
   .logos-grid {
     display: flex;

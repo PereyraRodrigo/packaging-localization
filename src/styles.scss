@@ -1139,3 +1139,19 @@ $steps: 10;
 	  transform: translate(-100px, 100px);
 	}
   }
+  @media (max-width: 813px) {
+	.container-full-padding--slider {
+	  padding: 0 0;
+	}
+	.slick-prev {
+	  position: relative;
+	  top: 31.6vw;
+	  left: 16px;
+	  z-index: 1;
+	}
+	.slick-next {
+	  position: relative;
+	  left: 89vw;
+	  bottom: 29vw;
+	}
+  }

@@ -2,7 +2,12 @@
   position: relative;
 }
 .containerForm{
-  padding: 9rem 0 3rem 0;
+  padding: 9rem 3rem 3rem 3rem;
+}
+@media (max-width: 815px){
+  .containerForm{
+    padding: 9rem 3rem 3rem 3rem;
+  }
 }
 .career-main {
   color: white;
