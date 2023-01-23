@@ -53,7 +53,7 @@ $slick-opacity-not-active: 0.25 !default;
               content: $slick-dot-character;
               width: 20px;
               height: 20px;
-              font-size: $slick-dot-size;
+              font-size: 44px !important;
               line-height: 20px;
               text-align: center;
               color: #7f47ff;
@@ -101,10 +101,9 @@ $slick-opacity-not-active: 0.25 !default;
     }
   }
   .slick-prev:before {
-    font-family:initial!important;
-    color:yellow;
+    color:#7f47ff !important;
   }
   .slick-next:before {
-    color: red !important;
-    background-color: #eee;
+    color: #7f47ff !important;
   }
+  

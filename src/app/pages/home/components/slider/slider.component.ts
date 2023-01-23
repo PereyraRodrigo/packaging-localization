@@ -25,6 +25,7 @@ export class SliderComponent implements OnInit {
   slideConfig = {
     slidesToShow: 3,
     slidesToScroll: 1,
+    dots: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -48,7 +49,7 @@ export class SliderComponent implements OnInit {
   removeSlide() {
     this.slides.length = this.slides.length - 1;
   }
-  slickInit(e: any) {
+  /* slickInit(e: any) {
     console.log('slick initialized');
   }
   breakpoint(e: any) {
@@ -59,7 +60,7 @@ export class SliderComponent implements OnInit {
   }
   beforeChange(e: any) {
     console.log('beforeChange');
-  }
+  } */
   constructor() {}
   ngOnInit(): void {}
 }
