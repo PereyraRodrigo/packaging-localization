@@ -1,6 +1,16 @@
 .container-full-padding--slider{
   padding: 0 4rem;
 }
+
+.slick-dots li.slick-active button::before {
+
+  color: #7f47ff !important;
+  opacity: .75;
+
+}
+.slick-dots li button::before {
+  color: red !important;
+}
 .our-work-title {
     width: fit-content;
     margin-inline: auto;
