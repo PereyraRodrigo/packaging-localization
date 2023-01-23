@@ -106,4 +106,12 @@ $slick-opacity-not-active: 0.25 !default;
   .slick-next:before {
     color: #7f47ff !important;
   }
-  
+  .slick-dots li.slick-active button::before{
+    color: --color-purple !important;
+  }
+  .slick-dots li button::before{
+    color: --color-purple !important;
+  }
+  .slick-dots li button::before{
+    font-size: 17px !important;
+  }
