@@ -1,0 +1,16 @@
+<div class="container-full-padding--slider">
+    <h1 class="text-center our-work-title">
+        <span class="colorIn">Our.</span>Work
+    </h1>
+    <ngx-slick-carousel class="carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+      (init)="slickInit($event)"
+      (breakpoint)="breakpoint($event)"
+      (afterChange)="afterChange($event)"
+      (beforeChange)="beforeChange($event)">
+    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+    <a [href]="slide.link" target="_blank"><img src="{{ slide.img }}" alt="" width="100%"></a>
+    </div>
+    </ngx-slick-carousel>
+</div>

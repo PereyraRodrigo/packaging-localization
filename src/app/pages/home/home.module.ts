@@ -16,6 +16,7 @@ import { FormComponent } from './components/form/form.component';
 import { OurClientsComponent } from './components/our-clients/our-clients.component';
 import { PackagingLocalizationComponent } from './components/packaging-localization/packaging-localization.component';
 import { OurWorkComponent } from './components/our-work/our-work.component';
+import { SliderComponent } from './components/slider/slider.component';
 
 
 
@@ -33,7 +34,8 @@ import { OurWorkComponent } from './components/our-work/our-work.component';
     FormComponent,
     OurClientsComponent,
     PackagingLocalizationComponent,
-    OurWorkComponent
+    OurWorkComponent,
+    SliderComponent
   ],
   imports: [
     CommonModule,

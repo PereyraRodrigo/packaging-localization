@@ -13,6 +13,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,7 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    SlickCarouselModule,
     BrowserTransferStateModule,
     InViewportModule,
     HttpClientModule,
